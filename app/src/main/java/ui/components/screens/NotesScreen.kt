@@ -12,7 +12,6 @@ import com.topic2.android.notes.domain.model.NoteModel
 import com.topic2.android.notes.viewmodel.MainViewModel
 import ui.components.Note
 import ui.components.TopAppBar
-import java.util.zip.CheckedInputStream
 
 @Composable
 fun NotesScreen(viewModel: MainViewModel){
