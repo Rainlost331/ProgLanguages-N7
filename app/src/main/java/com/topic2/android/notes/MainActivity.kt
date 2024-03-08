@@ -29,13 +29,14 @@ class MainActivity : AppCompatActivity() {
     )
   })
 
+  @OptIn(ExperimentalMaterialApi::class)
   @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
     setContent {
       NotesTheme {
-        NotesScreen(viewModel = viewModel)
+        MainActivityScreen(viewModel = viewModel)
       }
     }
   }
