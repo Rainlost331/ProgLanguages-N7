@@ -365,7 +365,7 @@ private fun SaveNoteContent(
             label = "Body",
             text = note.content,
             onTextChange = { newContent ->
-                onNoteChange.invoke(note.copy(title = newContent))
+                onNoteChange.invoke(note.copy(content = newContent))
             }
         )
         val canBeCheckedOff: Boolean = note.isCheckedOff != null
