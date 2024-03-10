@@ -212,3 +212,28 @@ private fun PickedColor(color: ColorModel){
 fun PickedColorPreview(){
     PickedColor(ColorModel.DEFAULT)
 }
+
+@Composable
+private fun NoteCheckOption(
+    isChecked: Boolean,
+    onCheckedChange: (Boolean) -> Unit
+) {
+    Row (
+        Modifier
+            .padding(8.dp)
+            .padding(top = 16.dp)
+    ){
+        Text(text = "Can note be checked off?", modifier = Modifier.weight(1f))
+        Switch(
+            checked = isChecked,
+            onCheckedChange = onCheckedChange,
+            modifier = Modifier.padding(start = 8.dp)
+        )
+    }
+}
+
+@Preview
+@Composable
+fun NoteCheckOptionPreview(){
+    NoteCheckOption(isChecked = false){}
+}
