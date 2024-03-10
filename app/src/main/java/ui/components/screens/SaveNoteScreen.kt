@@ -237,3 +237,32 @@ private fun NoteCheckOption(
 fun NoteCheckOptionPreview(){
     NoteCheckOption(isChecked = false){}
 }
+
+@Composable
+private fun ContentTextField(
+    modifier: Modifier = Modifier,
+    label: String,
+    text: String,
+    onTextChange: (String) -> Unit
+){
+    TextField(
+        value = text,
+        onValueChange = onTextChange,
+        label = {Text(label)},
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 8.dp),
+        colors = TextFieldDefaults.textFieldColors(
+            backgroundColor = MaterialTheme.colors.surface)
+    )
+}
+
+@Preview
+@Composable
+fun ContentTextFieldPreview(){
+    ContentTextField(
+        label = "Title",
+        text = "",
+        onTextChange = {}
+    )
+}
