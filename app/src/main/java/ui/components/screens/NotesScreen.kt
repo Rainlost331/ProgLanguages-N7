@@ -1,17 +1,11 @@
 package ui.components.screens
 
 import android.annotation.SuppressLint
+import  androidx.compose.material.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.FabPosition
-import androidx.compose.material.FloatingActionButton
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.ScaffoldState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.List
-import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -38,11 +32,24 @@ fun NotesScreen(viewModel: MainViewModel){
 
     Scaffold (topBar = {
         TopAppBar(
-            title = "Notes",
-            icon = Icons.Filled.List,
-            onIconClick = {
-                coroutineScope.launch {
-                    scaffoldState.drawerState.open()
+            title = {
+                Text(
+                    text = "Notes",
+                    color = MaterialTheme.colors.onPrimary
+                )
+            },
+            navigationIcon = {
+                IconButton(
+                    onClick = {
+                        coroutineScope.launch {
+                            scaffoldState.drawerState.open()
+                        }
+                    }
+                ) {
+                    Icon(
+                        imageVector = Icons.Filled.List,
+                        contentDescription = "Drawer Button"
+                    )
                 }
             }
         )
